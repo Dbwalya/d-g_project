@@ -8,10 +8,14 @@ body {
   width: 100vw;
   font-family: "Roboto Condensed", sans-serif;
 }
+
+/* Header styles */
+
 .header {
   height: 100vh;
   width: 100%;
   position: relative;
+  z-index: 100;
 }
 .header > img {
   position: absolute;
@@ -20,6 +24,14 @@ body {
   z-index: 0;
   filter: brightness(35%);
   object-fit: cover;
+}
+.buynow-button {
+  border: 1px solid #ba55d3;
+  color: #ba55d3 !important;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-left: 15px;
+  padding: 1rem 2rem;
 }
 .header__info > a,
 h1,
@@ -57,18 +69,14 @@ span {
   margin-left: 5px;
 }
 
+/* Navigation Bar styles  */
+
 .nav-main {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 22.5px;
-  padding-right: 38.7px;
   background: #030303;
-  position: fixed;
-  top: 10;
-  z-index: 10;
-  width: 100vw;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
 }
 .nav-main > ul {
   display: flex;
@@ -77,23 +85,137 @@ span {
   list-style: none;
 }
 .nav-main a {
-  padding: 10px;
+  color: #fff;
   text-decoration: none;
-  color: lightgray;
-}
-.nav-main .buynow-button {
-  border: 1px solid #5b43d6;
-  color: #5b43d6;
-  border-radius: 30px;
-  font-size: 13px;
-  padding: 10px 30px;
-  cursor: pointer;
-  position: absolute;
-  right: 5vw;
-  top: 32.5%;
+  padding: 10px 12px;
 }
 .nav-main > img {
-  height: 6.5vh;
-  object-fit: contain;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 14px;
+}
+.humburger-menu {
+  display: none;
+}
+/* Services Section */
+.services {
+  background: url("./images/services-background.jpg");
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 110vh;
+  overflow: scroll;
+  position: relative;
+}
+.services > img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.services::-webkit-scrollbar {
+  display: none;
+}
+.services h2 {
+  background: #030303;
+  color: #fff;
+  width: 100%;
+  opacity: 0.66;
+  padding: 40px 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+.services__cards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.card {
+  height: 50vh;
+  flex: 0.3;
+  min-width: 280px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   border-radius: 10px;
+  opacity: 0.85;
+}
+.card img {
+  height: 100px;
+  margin-top: 15px;
+  object-fit: contain;
+}
+.card.web-development .card__info > p {
+  position: relative;
+}
+.card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 70px;
+}
+.card__info > h3 {
+  font-size: 16px;
+  padding: 12px;
+  color: #6c757d;
+}
+.card__info > p {
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 500px) {
+  .header__info h1 {
+    color: #fff;
+    font-size: 18px;
+    left: 12vw;
+  }
+  .header__info span {
+    top: 50%;
+    font-size: 14px;
+    left: 12vw;
+    color: lightblue;
+  }
+  .services h2 {
+    margin-top: 80px;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .humburger-menu {
+    display: unset;
+  }
+}
+@media screen and (max-width: 710px) {
+  .nav-main > ul {
+    display: none;
+  }
+  .humburger-menu {
+    display: unset;
+    border-radius: unset;
+  }
+  .nav-main > img {
+    height: 33.45px;
+  }
+  .nav-main {
+    justify-content: space-between;
+  }
+  .nav-main {
+    padding-left: 30px;
+    padding-right: 70px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .nav-main > ul {
+    font-size: 13px;
+  }
 }
