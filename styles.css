@@ -125,22 +125,22 @@ span {
 .services__fadeLeft {
   opacity: 0.8;
   left: 0;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 3),
     rgba(0, 0, 0, 0)
-  );
+  ); */
 }
 .services__fadeRight {
   right: 0;
   opacity: 0.8;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to left,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 3),
     rgba(0, 0, 0, 0)
-  );
+  ); */
 }
 .services > img {
   position: absolute;
