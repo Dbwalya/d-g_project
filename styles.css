@@ -21,9 +21,14 @@ body {
   position: absolute;
   height: 100%;
   width: 100vw;
-  z-index: 0;
   filter: brightness(35%);
   object-fit: cover;
+}
+.header-background-mobile {
+  z-index: 0;
+}
+.header-background {
+  z-index: 20;
 }
 .buynow-button {
   border: 1px solid #ba55d3;
@@ -37,6 +42,7 @@ body {
 h1,
 span {
   position: absolute;
+  z-index: 100;
 }
 .header__info span {
   top: 50%;
@@ -108,6 +114,34 @@ span {
   overflow: scroll;
   position: relative;
 }
+.services__fadeLeft,
+.services__fadeRight {
+  position: absolute;
+  height: 80%;
+  bottom: 20px;
+  width: 26vw;
+  z-index: 100;
+}
+.services__fadeLeft {
+  opacity: 0.8;
+  left: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 3),
+    rgba(0, 0, 0, 0)
+  );
+}
+.services__fadeRight {
+  right: 0;
+  opacity: 0.8;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 3),
+    rgba(0, 0, 0, 0)
+  );
+}
 .services > img {
   position: absolute;
   height: 100%;
@@ -118,7 +152,7 @@ span {
   display: none;
 }
 .services h2 {
-  background: #030303;
+  background: #61047994;
   color: #fff;
   width: 100%;
   opacity: 0.66;
@@ -132,7 +166,8 @@ span {
   display: flex;
   justify-content: center;
   gap: 4rem;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
 .card {
   height: 50vh;
@@ -144,6 +179,7 @@ span {
   position: relative;
   border-radius: 10px;
   opacity: 0.85;
+  cursor: pointer;
 }
 .card img {
   height: 100px;
@@ -175,6 +211,12 @@ span {
 /* Media Queries */
 
 @media screen and (max-width: 500px) {
+  .header > .header-background-mobile {
+    z-index: 20;
+  }
+  .header-background {
+    z-index: 0;
+  }
   .header__info h1 {
     color: #fff;
     font-size: 18px;
@@ -193,6 +235,12 @@ span {
   }
   .humburger-menu {
     display: unset;
+  }
+  .services__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
   }
 }
 @media screen and (max-width: 710px) {
