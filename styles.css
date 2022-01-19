@@ -156,8 +156,8 @@ span {
   color: #fff;
   width: 100%;
   opacity: 0.66;
-  padding: 40px 30px;
-  margin-top: 20px;
+  padding: 20px 30px;
+  margin-top: 22px;
   text-align: center;
 }
 .services__cards {
@@ -166,7 +166,7 @@ span {
   display: flex;
   justify-content: center;
   gap: 4rem;
-  overflow-x: auto;
+  overflow-x: hidden;
   flex-wrap: nowrap;
 }
 .card {
@@ -180,6 +180,13 @@ span {
   border-radius: 10px;
   opacity: 0.85;
   cursor: pointer;
+}
+
+.card.left,
+.card.right {
+  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 .card img {
   height: 100px;
@@ -195,7 +202,7 @@ span {
   align-items: center;
   position: absolute;
   width: 100%;
-  bottom: 70px;
+  bottom: 40px;
 }
 .card__info > h3 {
   font-size: 16px;
@@ -241,6 +248,17 @@ span {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
+  }
+  .card.left {
+    margin-right: 100%;
+    margin-left: 55%;
+    background: transparent;
+  }
+  .card.right {
+    background: transparent;
+  }
+  .services__cards {
+    overflow-x: scroll;
   }
 }
 @media screen and (max-width: 710px) {
